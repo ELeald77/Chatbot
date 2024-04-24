@@ -44,14 +44,14 @@ class MasterPanel:
         self.chat_display.config(state=tk.DISABLED)
 
         # Message Entry
-        self.message_entry = tk.Text(frame_form, bg='#f0f0f0', fg='black', font=('Arial', 16), relief=tk.FLAT, height=1)
+        self.message_entry = tk.Text(frame_form, bg='#f0f0f0', fg='black', font=('Arial', 16), relief=tk.FLAT, height=3)
         self.message_entry.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=(10,0), pady=(10,10))
         self.message_entry.bind("<Return>", self.send_message)
 
         # Send Button
         send_icon = leer_imagen("./img/envio.png", (50, 70))  # Ajusta el tamaño del ícono según tus necesidades
         send_button = tk.Button(frame_form, command=self.send_message, bg='#007bff', fg='white', font=('Arial', 12), relief=tk.FLAT, width=send_icon.width() + 10, height=send_icon.height() + 10, compound=tk.LEFT, image=send_icon)
-        send_button.pack(side=tk.RIGHT, fill=tk.BOTH, padx=(0,10), pady=(10,10))
+        send_button.place(relx=1, rely=1, x=-10, y=-10, anchor="se")
 
 
         salir_icon = leer_imagen("./img/salir.png", (50, 50))  # Ajusta el tamaño del ícono según tus necesidades
